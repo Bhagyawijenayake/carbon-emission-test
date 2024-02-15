@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const execSync = require("child_process").execSync;
 
-const ports = [8080, 8081, 8082];
+const ports = [8080, 8081, 8082,8083];
 let runs = 0;
 const runLimit = 10; // Number of performance tests to run
 
@@ -15,6 +15,8 @@ for (let run = 0; run < runLimit * ports.length; run++) {
     framework = "react";
   } else if (port === 8082) {
     framework = "angular";
+  }else if (port === 8083) {
+    framework = "vue";
   }
 
   console.log(`Running test for app on port ${port} with ${framework}`);
